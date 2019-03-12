@@ -28,5 +28,5 @@ public interface MatcherApi {
    * the national number pattern defined in the given {@code PhoneNumberDesc} message.
    */
   boolean matchNationalNumber(CharSequence number, PhoneNumberDesc numberDesc,
-                              boolean allowPrefixMatch);
+      boolean allowPrefixMatch);
 }
