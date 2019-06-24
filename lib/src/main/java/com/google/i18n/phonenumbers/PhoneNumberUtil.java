@@ -898,7 +898,7 @@ public class PhoneNumberUtil {
     }
 
     String nationalSignificantNumber = format(copiedProto,
-                                              PhoneNumberUtil.PhoneNumberFormat.INTERNATIONAL);
+                                              PhoneNumberFormat.INTERNATIONAL);
     String[] numberGroups = NON_DIGITS_PATTERN.split(nationalSignificantNumber);
     // The pattern will start with "+COUNTRY_CODE " so the first group will always be the empty
     // string (before the + symbol) and the second group will be the country calling code. The third
@@ -1976,7 +1976,7 @@ public class PhoneNumberUtil {
    * where you want to test what will happen with an invalid number. Note that the number that is
    * returned will always be able to be parsed and will have the correct country code. It may also
    * be a valid *short* number/code for this region. Validity checking such numbers is handled with
-   * {@link com.google.i18n.phonenumbers.ShortNumberInfo}.
+   * {@link ShortNumberInfo}.
    *
    * @param regionCode  the region for which an example number is needed
    * @return  an invalid number for the specified region. Returns null when an unsupported region or
@@ -2713,10 +2713,10 @@ public class PhoneNumberUtil {
   }
 
   /**
-   * Gets an {@link com.google.i18n.phonenumbers.AsYouTypeFormatter} for the specific region.
+   * Gets an {@link AsYouTypeFormatter} for the specific region.
    *
    * @param regionCode  the region where the phone number is being entered
-   * @return  an {@link com.google.i18n.phonenumbers.AsYouTypeFormatter} object, which can be used
+   * @return  an {@link AsYouTypeFormatter} object, which can be used
    *     to format phone numbers in the specific region "as you type"
    */
   public AsYouTypeFormatter getAsYouTypeFormatter(String regionCode) {
@@ -3015,7 +3015,7 @@ public class PhoneNumberUtil {
    * interpreted with the defaultRegion supplied. It also attempts to convert any alpha characters
    * into digits if it thinks this is a vanity number of the type "1800 MICROSOFT".
    *
-   * <p> This method will throw a {@link com.google.i18n.phonenumbers.NumberParseException} if the
+   * <p> This method will throw a {@link NumberParseException} if the
    * number is not considered to be a possible number. Note that validation of whether the number
    * is actually a valid number for a particular region is not performed. This can be done
    * separately with {@link #isValidNumber}.
